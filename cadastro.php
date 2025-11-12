@@ -3,7 +3,9 @@ require_once 'conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'];
-    $cpf = $_POST['cpf']
+
+    // ERRO: Faltava ponto e vírgula no final desta linha.
+    $cpf = $_POST['cpf'];
 
     $sql = "INSERT INTO clientes (nome, cpf) VALUES ('$nome', '$cpf')";
     mysqli_query($conn, $sql);
@@ -23,9 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <form method="post">
     <label>Nome:<br><input type="text" name="nome"></label><br><br>
     <label>CPF:<br><input type="text" name="cpf"></label><br><br>
-    <button type="">Salvar</button>
+
+    // ERRO: O botão estava com type vazio ("").
+    <button type="submit">Salvar</button>
   </form>
 
-  <p><a href="index">Voltar</a></p>
+  // ERRO: O link estava sem a extensão do arquivo (index → index.php)
+  <p><a href="index.php">Voltar</a></p>
 </body>
 </html>
