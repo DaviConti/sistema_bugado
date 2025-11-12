@@ -5,7 +5,8 @@ $user = "root";
 $pass = "";
 $db   = "manutencao";
 
-$conn = mysqli_connect($server, $user, $pass, $db);
+// ❌ ERRO: A variável $server não foi declarada.
+$conn = mysqli_connect($host, $user, $pass, $db);
 
 if (!$conn) {
     die("Erro na conexão: " . mysqli_connect_error());
