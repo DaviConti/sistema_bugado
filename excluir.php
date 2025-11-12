@@ -7,9 +7,11 @@ if (!isset($_GET['id'])) {
 
 $id = $_GET['id'];
 
-$sql = "DELETE FROM clientes";
+// ❌ ERRO: O comando abaixo apagava TODOS os clientes.
+$sql = "DELETE FROM clientes WHERE id = $id";
 mysqli_query($conn, $sql);
 
-header('Location: editar.php');
+// ❌ ERRO: Redirecionava para 'editar.php' após deletar.
+header('Location: index.php');
 exit;
 ?>
