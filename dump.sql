@@ -1,4 +1,6 @@
 CREATE DATABASE IF NOT EXISTS manutencao;
+
+// ❌ POSSÍVEL ERRO: se o ambiente não permitir múltiplos comandos,
 USE manutencao;
 
 CREATE TABLE IF NOT EXISTS clientes (
